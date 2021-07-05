@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset='utf-8'/>
+		<title>
+			Elektron Calculus
+		</title>
+<style>
+h1 {text-align:center}
+body {padding:0 10% 0 10%}
+.alerta {background-color:yellow}
+#velocidade {color:gray}
+</style>
+	</head>
+	<body>
+		<h1>Elektron Calculus</h1>
+		<p>Desenvolvido para estudantes, pesquisadores e profissionais de elétrica e eletrônica</p>
+		<form name='paralel-form' action='' method='GET'>
+			<input type='checkbox' id='opt_arr' name='opt_arr' checked>
+			<label for='opt_arr'>Arredondar</label>
+			<br>
+			<input type='radio' id='opt_res' name='kindacalc' value='opt_res' checked>
+			<label for='opt_res'>Resistência</label>
+			<input type='radio' id='opt_cap' name='kindacalc' value='opt_cap'>
+			<label for='opt_cap'>Capacitância</label>
+			<br><br>
+			<input type='text' id='res_paralelo' name='res_paralelo'placeholder='ex: (3300+10000)//742//2200' pattern='[0-9|//]*'>
+			<input type='button' value='Calcular' onClick='calc_res_paralel(this.form.res_paralelo.value)'>
+		</form>
+		<p>Resultado:
+		<span id='res_paralel_result'></span><br>
+		<span id='velocidade'></span>
+		</p>
+		<hr>
+		<h2>Instruções:</h2>
+		<ul>
+			<li>Use <var>A+B+C</var> para associação em <b>série</b></li>
+			<li>Use <var>A//B//C</var> para associação em <b>paralelo</b></li>
+			<li>Use parêntesis para associação <b>mista</b><br>
+			Exemplo: </var>(A+B)//(C+A)//D</var></li>
+		</ul>
+		<h4 class='alerta'>Atenção: associação mista ainda não disponível!</h4>
+		<hr>
+		<h2>Aprenda</h2>
+		<h4>Resistência</h4>
+		<p>O calculo de resistência costuma ser o primeiro ensinado. Embora seja uma propriedade geral dos eletrônicos,
+		costuma ser estudado com resistores.</p>
+		<p>O cálculo de resistência em uma associanção em série deve ser calculada através de uma soma.
+		É bastante trivial, porém a Elektron Calculus proporciona integração da soma com os demais tipos de calculos,
+		facilitando a análise de sistemas mais complexos. Para tal, utlize a notação <var>A+B+C</var>.</p>
+		<p>Em uma associação em paralelo, utiliza-se a notação <var>A//B//C</var>. A resolução, no entanto, é mais complexa: <br>
+		<var>Req = (A*B)/(A+B)</var> para dois elementos, ou então <br>
+		<var>Res^-1 = (A^-1) + (B^-1) + (C^-1)</var> no caso de múltiplos fatores.<br>
+		Apesar disso, a Elektron Calculus, ao receber multiplos fatores, os resolve de 2 em 2, até um resultado único
+		</p>
+
+		<h4>Capacitância</h4>
+		<p>A capacitância é calculada de forma inversa em relação a resistência.<br>
+		Na associação em paralelo, o valor em capacitância é somado, enquanto na associação em série,
+		precisamos usar o mesmo método para resistências paralelas.<br>
+		Mantém-se sempre a mesma notação: <var>+</var> para associação em série, e <var>//</var> para associação em paralelo.
+		</p>
+		<hr>
+		<h2>Suporte</h2>
+		<p>Criado por Renato Araújo<br>
+		renatorraraujo@gmail.com<br>
+		Minha página https://renatoexpert.github.io/<br>
+		Repositório do projeto https://github.com/renatoexpert/elektron-calculus/ <br>
+		</p>
+		<script src='js/calcular.js'></script>
+	</body>
+</html>
+
