@@ -15,20 +15,18 @@ body {padding:0 10% 0 10%}
 	<body>
 		<h1>Elektron Calculus</h1>
 		<p>Desenvolvido para estudantes, pesquisadores e profissionais de elétrica e eletrônica</p>
-		<p>
-			<form name='paralel-form' action='' method='GET'>
-				<input type='checkbox' id='opt_arr' name='opt_arr' checked>
-				<label for='opt_arr'>Arredondar</label>
-				<br>
-				<input type='radio' id='opt_res' name='kindacalc' value='opt_res' checked>
-				<label for='opt_res'>Resistência</label>
-				<input type='radio' id='opt_cap' name='kindacalc' value='opt_cap'>
-				<label for='opt_cap'>Capacitância</label>
-				<br><br>
-				<input type='text' id='res_paralelo' name='res_paralelo'placeholder='ex: (3300+10000)//742//2200' pattern='[0-9|//]*'>
-				<input type='button' value='Calcular' onClick='calc_res_paralel(this.form.res_paralelo.value)'>
-			</form>
-		</p>
+		<form name='paralel-form' action='' method='GET'>
+			<input type='checkbox' id='opt_arr' name='opt_arr' checked>
+			<label for='opt_arr'><p>Arredondar</p></label>
+			<br>
+			<input type='radio' id='opt_res' name='kindacalc' value='opt_res' checked>
+			<label for='opt_res'>Resistência</label>
+			<input type='radio' id='opt_cap' name='kindacalc' value='opt_cap'>
+			<label for='opt_cap'>Capacitância</label>
+			<br><br>
+			<input type='text' id='res_paralelo' name='res_paralelo'placeholder='ex: (3300+10000)//742//2200' pattern='[0-9|//]*'>
+			<input type='button' value='Calcular' onClick='calc_res_paralel(this.form.res_paralelo.value)'>
+		</form>
 		<p>Resultado:
 		<span id='res_paralel_result'></span><br>
 		<span id='velocidade'></span>
