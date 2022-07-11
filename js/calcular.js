@@ -24,16 +24,12 @@ function calc_res_paralel (termo) {
 	
 	poker	= () => entrada.length;	// retorna o numero de itens em fila
 	pega	= indice => Number (entrada [poker() + indice]); // retorna um numero da lista
-	function redondo (x) {
-		if (arredondar) { return Math.round(x)
-		} else if (!arredondar) { return x };
-	}
 
 	function calcular (a,b) {
 		if ( (tipo&&medtip)||!(tipo||medtip) ) {
-			return redondo ((a*b)/(a+b)) 	// formula para resistores paralelos
+			return (a*b)/(a+b) 	// formula para resistores paralelos
 		} else { 
-			return redondo (a+b) 
+			return a+b 
 		} 		// formula para somas
 	}
 	
