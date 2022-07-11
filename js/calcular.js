@@ -20,14 +20,7 @@ function calc_res_paralel (termo) {
 	poker	= () => entrada.length;	// retorna o numero de itens em fila
 	pega	= indice => Number (entrada [poker() + indice]); // retorna um numero da lista
 
-	function calcular (a,b) {
-		if ( (tipo&&medtip)||!(tipo||medtip) ) {
-			return (a*b)/(a+b) 	// formula para resistores paralelos
-		} else { 
-			return a+b 
-		} 		// formula para somas
-	}
-	
+	calcular	= (a,b) => tipo == medtip ? (a*b)/(a+b) : a+b;
 	// Calculando de 2 em 2 fatores
 	for ( ; poker() > 1 ;){
 		entrada [poker()-2]  = calcular ( pega(-1),pega(-2));
