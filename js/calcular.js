@@ -4,9 +4,9 @@ var	arredondar	= document.getElementById('opt_arr').checked,
 	motiv		= ['Instântaneo!', 'Superveloz!', 'Viu isso?', 'Foi um flash!', 'Incrível'];
 
 function calc_res_paralel (termo) {
-	var	opt_cap	= document.getElementById('opt_cap').checked,
-		opt_res	= document.getElementById('opt_res').checked;
-	var	Stime	= new Date();
+	let	opt_cap	= document.getElementById('opt_cap').checked,
+		opt_res	= document.getElementById('opt_res').checked,
+		Stime	= new Date();
 
 	// definindo separador e tipo de operação
 	function complex () {
@@ -53,8 +53,8 @@ function calc_res_paralel (termo) {
 	}
 
 	// Apresentando o resultado
-	var	Ftime	= new Date();
-	var	Ttime	= (Ftime -Stime);
+	let	Ftime	= new Date();
+	let	Ttime	= (Ftime -Stime);
 	resposta.innerHTML	= entrada+medida;
 	motivacao	= motiv[Math.floor(Math.random()*motiv.length)];
 	tempo.innerHTML	= motivacao + ' Realizado em aproximadamente ' + Ttime + ' milisegundos.';
