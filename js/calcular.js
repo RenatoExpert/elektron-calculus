@@ -14,10 +14,10 @@ function calc_res_paralel (termo) {
 	tipo	= termo.includes('//');
 	entrada	= tipo ? termo.split (['//']) : termo.split (['+']);
 	// definindo unidade de medida (ohm ou fahrrad)
-	if (opt_res) {
+	if (Options.opt_res) {
 		medida = '\u03a9';
 		medtip = true;
-	} else if (opt_cap) {
+	} else if (Options.opt_cap) {
 		medida = 'F';
 		medtip = false;
 	} else {
