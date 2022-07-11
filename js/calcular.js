@@ -1,13 +1,13 @@
 class Options {
 	static get arredondar () {return document.getElementById('opt_arr').checked}
+	static get opt_cap () {return document.getElementById('opt_cap').checked}
+	static get opt_res () {return document.getElementById('opt_res').checked}
 }
 var	resposta	= document.getElementById('res_paralel_result'),
 	tempo		= document.getElementById('velocidade'),
 	motiv		= ['Instântaneo!', 'Superveloz!', 'Viu isso?', 'Foi um flash!', 'Incrível'];
 
 function calc_res_paralel (termo) {
-	let	opt_cap	= document.getElementById('opt_cap').checked,
-		opt_res	= document.getElementById('opt_res').checked,
 		Stime	= new Date();
 
 	// definindo separador e tipo de operação
