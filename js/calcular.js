@@ -9,17 +9,8 @@ function calc_res_paralel (termo) {
 		Stime	= new Date();
 
 	// definindo separador e tipo de operação
-	function complex () {
-		tipo = true;
-		var entrada = termo.split (['//']);
-	}
-	function simple () {
-		var tipo = false;
-		var entrada = termo.split (['+']);
-	}
-	termo.includes('//')	? complex ()
-	  : termo.includes('+')	? simple ()
-	
+	tipo	= termo.includes('//');
+	entrada	= tipo ? termo.split (['//']) : termo.split (['+']);
 	// definindo unidade de medida (ohm ou fahrrad)
 	if (opt_res) {
 		medida = '\u03a9';
@@ -47,7 +38,7 @@ function calc_res_paralel (termo) {
 	}
 	
 	// Calculando de 2 em 2 fatores
-	for ( ; poker() > 1 ; ){
+	for ( ; poker() > 1 ;){
 		entrada [poker()-2]  = calcular ( pega(-1),pega(-2));
 		entrada.pop();
 	}
