@@ -14,15 +14,8 @@ function calc_res_paralel (termo) {
 	tipo	= termo.includes('//');
 	entrada	= tipo ? termo.split (['//']) : termo.split (['+']);
 	// definindo unidade de medida (ohm ou fahrrad)
-	if (Options.opt_res) {
-		medida = '\u03a9';
-		medtip = true;
-	} else if (Options.opt_cap) {
-		medida = 'F';
-		medtip = false;
-	} else {
-		alert('Escolha o tipo de grandeza');
-	}
+	medip	= Options.opt_res;
+	medida	= medtip ? '\u03a9' : 'F';
 	
 	poker	= () => entrada.length;	// retorna o numero de itens em fila
 	pega	= indice => Number (entrada [poker() + indice]); // retorna um numero da lista
