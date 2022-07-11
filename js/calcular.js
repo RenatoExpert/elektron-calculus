@@ -14,7 +14,7 @@ function calc_res_paralel (termo) {
 	tipo	= termo.includes('//');
 	entrada	= tipo ? termo.split (['//']) : termo.split (['+']);
 	// definindo unidade de medida (ohm ou fahrrad)
-	medip	= Options.opt_res;
+	medtip	= Options.opt_res;
 	medida	= medtip ? '\u03a9' : 'F';
 	
 	poker	= () => entrada.length;	// retorna o numero de itens em fila
