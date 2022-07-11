@@ -1,5 +1,7 @@
-var	arredondar	= document.getElementById('opt_arr').checked,
-	resposta	= document.getElementById('res_paralel_result'),
+class Options {
+	static get arredondar () {return document.getElementById('opt_arr').checked}
+}
+var	resposta	= document.getElementById('res_paralel_result'),
 	tempo		= document.getElementById('velocidade'),
 	motiv		= ['Instântaneo!', 'Superveloz!', 'Viu isso?', 'Foi um flash!', 'Incrível'];
 
@@ -38,8 +40,7 @@ function calc_res_paralel (termo) {
 		entrada [poker()-2]  = calcular ( pega(-1),pega(-2));
 		entrada.pop();
 	}
-	console.log (arredondar);
-	entrada	= arredondar ? Math.round (entrada) : entrada;
+	entrada	= Options.arredondar ? Math.round (entrada) : entrada;
 
 	// Apresentando o resultado
 	let	Ftime	= new Date();
