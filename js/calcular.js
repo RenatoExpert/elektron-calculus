@@ -1,12 +1,12 @@
-var arredondar = document.getElementById('opt_arr').checked;
-var resposta = document.getElementById('res_paralel_result');
-var tempo = document.getElementById('velocidade');
-var motiv = ['Instântaneo!', 'Superveloz!', 'Viu isso?', 'Foi um flash!', 'Incrível']
+var	arredondar	= document.getElementById('opt_arr').checked,
+	resposta	= document.getElementById('res_paralel_result'),
+	tempo		= document.getElementById('velocidade'),
+	motiv		= ['Instântaneo!', 'Superveloz!', 'Viu isso?', 'Foi um flash!', 'Incrível'];
 
 function calc_res_paralel (termo) {
-	var opt_cap = document.getElementById('opt_cap').checked;
-	var opt_res = document.getElementById('opt_res').checked;
-	var Stime = new Date();
+	var	opt_cap	= document.getElementById('opt_cap').checked,
+		opt_res	= document.getElementById('opt_res').checked;
+	var	Stime	= new Date();
 
 	// definindo separador e tipo de operação
 	if (termo.includes('//')==true) {
@@ -39,7 +39,8 @@ function calc_res_paralel (termo) {
 		if ( (tipo&&medtip)||!(tipo||medtip) ) {
 			return redondo ((a*b)/(a+b)) 	// formula para resistores paralelos
 		} else { 
-			return redondo (a+b) } 		// formula para somas
+			return redondo (a+b) 
+		} 		// formula para somas
 	}
 	
 	// Calculando de 2 em 2 fatores
@@ -49,10 +50,10 @@ function calc_res_paralel (termo) {
 	}
 
 	// Apresentando o resultado
-	var Ftime = new Date();
-	var Ttime = (Ftime -Stime);
-	resposta.innerHTML = entrada+medida;
-	motivacao = motiv[Math.floor(Math.random()*motiv.length)];
-	tempo.innerHTML = motivacao + ' Realizado em aproximadamente ' + Ttime + ' milisegundos.';
+	var	Ftime	= new Date();
+	var	Ttime	= (Ftime -Stime);
+	resposta.innerHTML	= entrada+medida;
+	motivacao	= motiv[Math.floor(Math.random()*motiv.length)];
+	tempo.innerHTML	= motivacao + ' Realizado em aproximadamente ' + Ttime + ' milisegundos.';
 };
 
