@@ -38,6 +38,8 @@ function calc_res_paralel (termo) {
 		entrada [poker()-2]  = calcular ( pega(-1),pega(-2));
 		entrada.pop();
 	}
+	console.log (arredondar);
+	entrada	= arredondar ? Math.round (entrada) : entrada;
 
 	// Apresentando o resultado
 	let	Ftime	= new Date();
