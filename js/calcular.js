@@ -31,8 +31,8 @@ function calc_res_paralel (termo) {
 		alert('Escolha o tipo de grandeza');
 	}
 	
-	function poker () { return entrada.length }; // retorna o numero de itens em fila
-	function pega (indice) { return Number ( entrada [ poker() + indice ] ) }; // retorna um numero da lista
+	poker	= () => entrada.length;	// retorna o numero de itens em fila
+	pega	= indice => Number (entrada [poker() + indice]); // retorna um numero da lista
 	function redondo (x) {
 		if (arredondar) { return Math.round(x)
 		} else if (!arredondar) { return x };
