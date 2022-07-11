@@ -9,13 +9,16 @@ function calc_res_paralel (termo) {
 	var	Stime	= new Date();
 
 	// definindo separador e tipo de operação
-	if (termo.includes('//')==true) {
+	function complex () {
 		tipo = true;
-		var entrada = termo.split ( ['//'] );
-	} else if (termo.includes('+')==true) {
+		var entrada = termo.split (['//']);
+	}
+	function simple () {
 		var tipo = false;
-		var entrada = termo.split ( ['+'] );
-	};
+		var entrada = termo.split (['+']);
+	}
+	termo.includes('//')	? complex ()
+	  : termo.includes('+')	? simple ()
 	
 	// definindo unidade de medida (ohm ou fahrrad)
 	if (opt_res) {
